@@ -1,0 +1,42 @@
+//Modules
+//In node js every file is a module by default
+//Modules allows you to split your code whic can be imported into another
+//Node js uses CommonJS library under the hood for in built modules
+//you can also use ES6 modules
+
+If you consoloe.log(module) in a file, it print a Module object such as below,
+Module {
+  id: '.',
+  path: '/Users/kalpeshdesai/Documents/node_tutorial',
+  exports: {},
+  filename: '/Users/kalpeshdesai/Documents/node_tutorial/3-names.js',
+  loaded: false,
+  children: [],
+  paths: [
+    '/Users/kalpeshdesai/Documents/node_tutorial/node_modules',
+    '/Users/kalpeshdesai/Documents/node_modules',
+    '/Users/kalpeshdesai/node_modules',
+    '/Users/node_modules',
+    '/node_modules'
+  ]
+}
+
+The "exports" is an object. Whatever you put inside exports object, the CommonJS allows to import it outside of this module
+e.g module.exports ={name}
+nd in another file import is using require global function of CommonJS as below
+const name = require('./3-names)
+
+Another immortant aspect is, when you import a module (for eg require('./modulefilename.js)), it executes the code inside modulefilename.js
+So if it has any function execution such as fn(), then on import the fn will execute
+this si a use case where you can just import a module which'll do cool stuff behind the scene
+Example of this is inside ./7-module-import-executes-function.js
+
+BUilt-in modules in node:
+------------------------
+Below are some of the important built-in modules
+OS
+FS
+PATH
+HTTP
+There area bunch of built-in module node has. Refer to nodejs documentation
+
